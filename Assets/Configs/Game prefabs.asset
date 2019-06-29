@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dae4243240354419258fbf08a5861e, type: 3}
+  m_Name: Game prefabs
+  m_EditorClassIdentifier: 
+  blockPrefabs:
+    prefabUndestroyableTile: {fileID: 2376041321116723155, guid: 656c00550306bdf41b021a0e8620d5e6,
+      type: 3}
+    prefabDestroyableTile: {fileID: 1884277051634947161, guid: 59d8a88f4e870824581dff6ed8e2e2a6,
+      type: 3}
+  creaturePrefabs:
+    prefabCreature_Ball: {fileID: 7009704157535467518, guid: 72cd840a97023cd40aca6a0e8ce7b8af,
+      type: 3}
+    prefabCreature_Ghost: {fileID: 7009704157535467518, guid: 717bea8f931f1ab42b5587008311ae51,
+      type: 3}
+    prefabCreature_Orange: {fileID: 4111349387556374819, guid: c989d228a56f9c24382db991d620770f,
+      type: 3}
+    prefabCreature_Coin: {fileID: 6582146931899424725, guid: 5c649d9229700b04f88bcb546f19e68f,
+      type: 3}

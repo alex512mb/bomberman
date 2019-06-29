@@ -1,0 +1,16 @@
+{
+    "name": "Gameplay.Game",
+    "references": [
+        "Gameplay.Core.Generic",
+        "Utils",
+        "NavMeshComponents"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
