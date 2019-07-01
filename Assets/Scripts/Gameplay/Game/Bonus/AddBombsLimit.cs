@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using Bomberman.UsableItem;
+﻿using Bomberman.UsableItem;
+using UnityEngine;
 
 namespace Bomberman.Bonus
 {
@@ -11,9 +11,11 @@ namespace Bomberman.Bonus
         public int count = 1;
         protected override void Apply(GameObject obj)
         {
-            var installer = obj.GetComponentInChildren<BombInstaller>();
+            BombInstaller installer = obj.GetComponentInChildren<BombInstaller>();
             if (installer != null)
+            {
                 installer.bombLimit += count;
+            }
         }
     }
 }

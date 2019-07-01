@@ -2,8 +2,8 @@
 {
     public class ImmortalityEffect : TempEffect
     {
-        bool immortalityBeforeEffect;
-        DamageReceiver receiver;
+        private bool immortalityBeforeEffect;
+        private DamageReceiver receiver;
 
 
         protected override void ApplyEffect()

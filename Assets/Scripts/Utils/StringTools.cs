@@ -1,4 +1,4 @@
-﻿public static class StringTools 
+﻿public static class StringTools
 {
     public static string BuildTimeString(float sec)
     {

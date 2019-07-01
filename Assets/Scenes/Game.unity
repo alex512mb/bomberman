@@ -792,7 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentCreator:
     loadingScreen: {fileID: 590715525140564044}
-    gameConfig: {fileID: 11400000, guid: 5359f2656ef98a44b8d13973931bd531, type: 2}
+    gameConfig: {fileID: 11400000, guid: 2b8abb3c12875744e8fc4d0538123b02, type: 2}
     gameUI: {fileID: 2119917368}
     levelGrid: {fileID: 1920889164}
     navmeshSurface: {fileID: 754887087}

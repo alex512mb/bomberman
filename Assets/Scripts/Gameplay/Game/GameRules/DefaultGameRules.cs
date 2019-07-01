@@ -12,7 +12,7 @@ public class DefaultGameRules : GameRulesController
     public LevelGrid levelGrid;
     public override void OnGameTimeOver()
     {
-        var instance = Instantiate(prefabArmyOfPunishment);
+        Spawner instance = Instantiate(prefabArmyOfPunishment);
         instance.levelGrid = levelGrid;
         instance.StartSpawning();
     }

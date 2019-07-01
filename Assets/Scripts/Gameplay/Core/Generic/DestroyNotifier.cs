@@ -8,10 +8,13 @@ namespace Bomberman
     public class DestroyNotifier : MonoBehaviour
     {
         public event System.Action<GameObject> OnDestroyed;
-        void OnDestroy()
+
+        private void OnDestroy()
         {
             if (OnDestroyed != null)
+            {
                 OnDestroyed(gameObject);
+            }
         }
     }
 }

@@ -16,16 +16,15 @@ namespace Bomberman
         public LayerMask maskObstacles;
         public LineRenderer prefabLineExplosion;
 
-        float distanceLine { get { return radius - 0.5f; } }
+        private float distanceLine => radius - 0.5f;
 
-
-        IEnumerator Start()
+        private IEnumerator Start()
         {
             yield return new WaitForSeconds(deley);
             Explode();
         }
 
-        void Explode()
+        private void Explode()
         {
             line[] lines = CalculateLinesOfExplosion();
             for (int i = 0; i < lines.Length; i++)
@@ -46,7 +45,8 @@ namespace Bomberman
 
             Destroy(gameObject);
         }
-        line[] CalculateLinesOfExplosion()
+
+        private line[] CalculateLinesOfExplosion()
         {
             //calculate end points of lines
             Vector3 currentPos = transform.position.Snap();
@@ -56,38 +56,51 @@ namespace Bomberman
             Vector3 backEdgePosition = CalculateEndOfLine(distanceLine, currentPos, Vector3.back);
 
             List<line> lines = new List<line>();
-            if (leftEdgePosition != rightEdgePosition) lines.Add(new line(leftEdgePosition, rightEdgePosition));
-            if (forwardEdgePosition != backEdgePosition) lines.Add(new line(forwardEdgePosition, backEdgePosition));
+            if (leftEdgePosition != rightEdgePosition)
+            {
+                lines.Add(new line(leftEdgePosition, rightEdgePosition));
+            }
+
+            if (forwardEdgePosition != backEdgePosition)
+            {
+                lines.Add(new line(forwardEdgePosition, backEdgePosition));
+            }
 
             return lines.ToArray();
         }
-        Vector3 CalculateEndOfLine(float maxLength, Vector3 startPos, Vector3 direction)
+
+        private Vector3 CalculateEndOfLine(float maxLength, Vector3 startPos, Vector3 direction)
         {
-            var ray = new Ray(startPos, direction);
-            var hit = new RaycastHit();
+            Ray ray = new Ray(startPos, direction);
+            RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit, maxLength, maskObstacles))
             {
                 ApplyDamageTo(hit.collider.gameObject);
                 return hit.point;
             }
             else
+            {
                 return startPos + maxLength * direction;
+            }
         }
-        void ApplyDamageTo(GameObject obj)
+
+        private void ApplyDamageTo(GameObject obj)
         {
             DamageReceiver receiver = obj.GetComponent<DamageReceiver>();
             if (receiver != null)
+            {
                 receiver.ApplyDamage(damage);
+            }
         }
 
-        class line
+        private class line
         {
             public line(Vector3 a, Vector3 b)
             {
                 posA = a;
                 posB = b;
             }
-            public float length { get { return Vector3.Distance(posA, posB); } }
+            public float length => Vector3.Distance(posA, posB);
             public Vector3 posA;
             public Vector3 posB;
         }

@@ -13,9 +13,12 @@ namespace Bomberman.Monster
         {
             if (monster.State == MonsterState.Idle)
             {
-                var target = m_Searcher.FindObject();
+                GameObject target = m_Searcher.FindObject();
                 bool succesGoToPlayer = target != null && monster.TryGoToTarget(target.transform);
-                if (!succesGoToPlayer) monster.TryGoToRandomNeighbouring();
+                if (!succesGoToPlayer)
+                {
+                    monster.TryGoToRandomNeighbouring();
+                }
             }
         }
     }

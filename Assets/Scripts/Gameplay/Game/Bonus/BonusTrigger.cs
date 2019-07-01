@@ -8,11 +8,14 @@ namespace Bomberman.Bonus
     public abstract class BonusTrigger : MonoBehaviour
     {
         public bool autoDestroy;
-        void OnTriggerEnter(Collider other)
+
+        private void OnTriggerEnter(Collider other)
         {
             Apply(other.gameObject);
             if (autoDestroy)
+            {
                 Destroy(gameObject);
+            }
         }
         protected abstract void Apply(GameObject obj);
 
